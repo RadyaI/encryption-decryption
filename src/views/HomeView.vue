@@ -23,14 +23,19 @@
         <p>{{ state.decryptedMessage }}</p>
       </div>
     </div>
+    <inject/>
   </div>
 </template>
 
 <script>
 import { reactive } from 'vue';
 import CryptoJS from 'crypto-js';
+import { inject } from "@vercel/analytics"
 
 export default {
+  components: {
+    inject
+  },
   setup() {
     const state = reactive({
       message: '',
